@@ -2,8 +2,6 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from .managers import PostManager
-
 
 User = get_user_model()
 
@@ -80,8 +78,6 @@ class Post(BaseBlogModel):
         on_delete=models.SET_NULL,
         verbose_name='Категория',
     )
-
-    objects = PostManager()
 
     class Meta(BaseBlogModel.Meta):
         default_related_name = 'posts'
